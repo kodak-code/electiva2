@@ -1,0 +1,23 @@
+.card {
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #b0ceff;
+}
+
+.audio-icon {
+    position: absolute;
+    bottom: -40px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.card:hover .audio-icon {
+    display: block;
+}
