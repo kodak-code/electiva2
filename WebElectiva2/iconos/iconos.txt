@@ -1,0 +1,9 @@
+configuracion= https://www.freepik.com/icon/gear_850768
++ = https://www.freepik.com/icon/plus_1628948
+- = https://www.freepik.com/icon/minus_1628949
+check = https://www.freepik.com/icon/check_12533288#fromView=search&page=1&position=44&uuid=3af705a5-e825-4146-9219-27ea61d55dc3
+x = https://www.freepik.com/icon/close_12533529#fromView=resource_detail&position=12
+sonido = https://www.freepik.com/icon/sound_13776924#fromView=search&page=2&position=85&uuid=29e5fe0e-dde4-46a1-a7d7-069c7af89435
+
+finalizar orden = https://www.freepik.com/icon/menu_2702330#fromView=resource_detail&position=35
+seguir ordenando = https://www.freepik.com/icon/bill_2702445#fromView=resource_detail&position=11
