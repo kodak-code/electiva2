@@ -1,0 +1,26 @@
+/* Modo Claro */
+:root {
+  --color-fondo: #fffbec;
+  --color-texto-principal: #212121;
+  --color-texto-secundario: #333;
+  --color-fondo-elementos: #F5F5F5;
+  --color-bordes: #E0E0E0;
+}
+
+/* Modo Oscuro */
+[data-theme="dark"] {
+  --color-fondo: #121212;
+  --color-texto-principal: #E0E0E0;
+  --color-texto-secundario: #B3B3B3;
+  --color-fondo-elementos: #1E1E1E;
+  --color-bordes: #333333;
+}
+
+/* Modo Alto Contraste */
+[data-theme="high-contrast"] {
+  --color-fondo: #000000;
+  --color-texto-principal: #FFFF00;
+  --color-texto-secundario: #FFFFFF;
+  --color-fondo-elementos: #18d0ff;
+  --color-bordes: #18d0ff;
+}
