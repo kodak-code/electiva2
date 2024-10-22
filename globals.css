@@ -30,8 +30,9 @@
 
 
 body {
-  background-color: var(--color-fondo);
-  color: var(--color-texto-principal);
+  background-color: var(--color-fondo)  !important;
+  color: var(--color-texto-principal) !important;
+  font-family: Arial, Helvetica, sans-serif !important;/*Fuente elegida*/
 }
 
 
