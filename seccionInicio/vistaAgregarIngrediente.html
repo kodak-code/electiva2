@@ -3,81 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalización de Hamburguesa</title>
-    <link rel="stylesheet" href="../globals.css">
-   
+    <title>Aderezos/Condimentos/Ingredientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+ 
+    </style>
 </head>
-<body>
+<body class="p-4">
     <div class="container">
-        <a href="#" class="back">Volver</a>
-        <h2>Aderezos/Condimentos/Ingredientes</h2>
-        
-        <section class="category">
-            <h3>HAMBURGUESA SIMPLE:</h3>
-            <div class="item">
-                <div class="quantity-control">
-                    <span>1</span>
-                    <button class="plus">+</button>
-                    <button class="minus">-</button>
+        <!-- Título -->
+        <div class="row mb-3">
+            <div class="col-1 text-start">
+                <button class="btn btn-secondary">Volver</button>
+            </div>
+            <div class="col text-center">
+                <h3>Aderezos/Condimentos/Ingredientes</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-start mb-4">
+                <h4>Hamburguesa Simple:</h4>
+            </div>
+        </div>
+        <!-- Ingredientes de la hamburguesa simple -->
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="ingredient-info border rounded p-2 card">
+                    <img src="img-nuevas/ingredientes/queso.png" class="card-img-top" alt="">
                 </div>
-                <div class="item-name">
-                    <span>Queso</span>
-                    <span class="check">&#10003;</span>
+                <div class="quantity-controls m-2">
+                    <p class="btn btn-secondary">1</p>
+                    <button class="btn btn-success mb-1">+</button>
+                    <button class="btn btn-danger ">-</button>
                 </div>
             </div>
-            <div class="item">
-                <div class="quantity-control">
-                    <span>1</span>
-                    <button class="plus">+</button>
-                    <button class="minus">-</button>
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="ingredient-info border rounded p-2 card">
+                    <img src="img-nuevas/ingredientes/cebolla.png" class="card-img-top" alt="">
                 </div>
-                <div class="item-name">
-                    <span>Cebolla</span>
-                    <span class="check">&#10003;</span>
+                <div class="quantity-controls m-2">
+                    <p class="btn btn-secondary">1</p>
+                    <button class="btn btn-success mb-1">+</button>
+                    <button class="btn btn-danger">-</button>
                 </div>
             </div>
-        </section>
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="ingredient-info border rounded p-2 card">
+                    <img src="img-nuevas/ingredientes/queso.png" class="card-img-top" alt="">
+                </div>
+                <div class="quantity-controls m-2">
+                    <p class="btn btn-secondary">1</p>
+                    <button class="btn btn-success mb-1 tamanioboton">+</button>
+                    <button class="btn btn-danger tamanioboton">-</button>
+                </div>
+            </div>
+        </div>
 
-        <section class="category">
-            <h3>PAPAS:</h3>
-            <div class="item">
-                <div class="quantity-control">
-                    <span>0</span>
-                    <button class="plus">+</button>
-                    <button class="minus">-</button>
+        <!-- Adicionales -->
+        <div class="row text-start mb-4">
+            <h4>Adicionales:</h4>
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="ingredient-info border rounded p-2 card">
+                    <img src="img-nuevas/ingredientes/queso.png" class="card-img-top" alt="">
                 </div>
-                <div class="item-name">
-                    <span>Sal</span>
-                    <span class="cross">&#10060;</span>
+                <div class="quantity-controls m-1">
+                    <p class="btn btn-secondary">1</p>
+                    <button class="btn btn-success mb-1 tamanioboton">+</button>
+                    <button class="btn btn-danger tamanioboton">-</button>
                 </div>
             </div>
-        </section>
 
-        <section class="category">
-            <h3>ADICIONALES:</h3>
-            <div class="item">
-                <div class="quantity-control">
-                    <span>0</span>
-                    <button class="plus">+</button>
-                    <button class="minus">-</button>
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="ingredient-info border rounded p-2 card">
+                    <img src="img-nuevas/ingredientes/queso.png" class="card-img-top" alt="">
                 </div>
-                <div class="item-name">
-                    <span>Mayonesa</span>
+                <div class="quantity-controls m-1">
+                    <p class="btn btn-secondary">1</p>
+                    <button class="btn btn-success mb-1 tamanioboton">+</button>
+                    <button class="btn btn-danger tamanioboton">-</button>
                 </div>
             </div>
-            <div class="item">
-                <div class="quantity-control">
-                    <span>0</span>
-                    <button class="plus">+</button>
-                    <button class="minus">-</button>
-                </div>
-                <div class="item-name">
-                    <span>Mostaza</span>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <button class="next-btn">Siguiente</button>
+        <!-- Botón Siguiente -->
+        <div class="row mt-4">
+            <div class="col text-end">
+                <button class="btn btn-primary">Siguiente</button>
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
