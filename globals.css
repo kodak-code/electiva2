@@ -22,7 +22,7 @@
 [data-theme="high-contrast"] {
   --color-fondo: #000000;
   --color-texto-principal: #FFFF00;
-  --color-texto-secundario: #FFFFFF;
+  --color-texto-secundario: #000000;
   --color-fondo-elementos: #18d0ff;
   --color-icono:  #ffffff;
   --color-bordes: #FFFF00;
