@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styleInicio.css">
     <link rel="stylesheet" href="../globals.css">
+    <script src="manejarVistas.js" defer></script>
     <script src="../cambiar-tema.js" defer></script>
     <script src="guardar-opcion.js" defer></script>
     <!-- Font Awesome for icons -->
@@ -40,8 +41,9 @@
     </header>
     <div class="container text-center justify-content-center" style="position: relative; top:4rem">
         <div class="row justify-content-center custom-gap" style="gap:5rem;"> 
+            
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                <div class="card">
+                <div id="paraLlevar"  class="card">
                     <img src="seccionInicio/iconos/para-llevar.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">PARA LLEVAR</h3>
@@ -51,8 +53,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4  col-xl-4">
-                <div class="card">
+            <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-4  col-xl-4">
+                <div id="comerLocal" class="card">
                     <img src="seccionInicio/iconos/restaurante.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">PARA COMER EN EL LOCAL</h3>
@@ -150,7 +152,7 @@
             </div>
         </div>
     </div>
-
+    
 </body>
 
 </html>
