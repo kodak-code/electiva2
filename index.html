@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/styleInicio.css">
     <link rel="stylesheet" href="../globals.css">
     <script src="../cambiar-tema.js" defer></script>
+    <script src="guardar-opcion.js" defer></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -41,7 +42,7 @@
         <div class="row justify-content-center custom-gap" style="gap:5rem;"> 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 <div class="card">
-                    <img src="iconos/para-llevar.png" class="card-img-top" alt="...">
+                    <img src="seccionInicio/iconos/para-llevar.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">PARA LLEVAR</h3>
                     </div>
@@ -52,7 +53,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4  col-xl-4">
                 <div class="card">
-                    <img src="iconos/restaurante.png" class="card-img-top" alt="...">
+                    <img src="seccionInicio/iconos/restaurante.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">PARA COMER EN EL LOCAL</h3>
                     </div>
@@ -62,6 +63,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="successMessage" class="alert alert-success text-center" style="display: none; position: absolute; top: 20rem; left: 50%; transform: translateX(-50%); z-index: 1060;">
+        ¡Guardado con éxito!
     </div>
     
     
@@ -83,12 +87,13 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-primary" id="saveFontSizeBtn">Guardar Cambios</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Contraste -->
     <div class="modal fade" id="contrastModal" tabindex="-1" aria-labelledby="contrastModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -98,8 +103,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="contrastOptions" id="lightMode"
-                            value="light">
+                        <input class="form-check-input" type="radio" name="contrastOptions" id="lightMode" value="light">
                         <label class="form-check-label" for="lightMode">Modo Claro</label>
                     </div>
                     <div class="form-check">
@@ -107,19 +111,20 @@
                         <label class="form-check-label" for="darkMode">Modo Oscuro</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="contrastOptions" id="highContrastMode"
-                            value="high-contrast">
+                        <input class="form-check-input" type="radio" name="contrastOptions" id="highContrastMode" value="high-contrast">
                         <label class="form-check-label" for="highContrastMode">Alto Contraste</label>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-primary" id="saveContrastBtn">Guardar Cambios</button>
                 </div>
             </div>
         </div>
     </div>
+    
 
+    <!-- Modal Narrador -->
     <div class="modal fade" id="voiceOptionsModal" tabindex="-1" aria-labelledby="voiceOptionsModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -130,9 +135,9 @@
                 </div>
                 <div class="modal-body">
                     <label for="voiceSpeed">Velocidad de la Voz:</label>
-                    <input type="range" class="form-range" id="voiceSpeed" min="0.5" max="2" step="0.1" value="1">
+                    <input type="range" id="voiceSpeed" min="0.5" max="2" step="0.1" value="1">
                     <label for="voiceVolume">Volumen:</label>
-                    <input type="range" class="form-range" id="voiceVolume" min="0" max="1" step="0.1" value="1">
+                    <input type="range" id="voiceVolume" min="0" max="1" step="0.1" value="1">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="enableNarrator" checked>
                         <label class="form-check-label" for="enableNarrator">Activar Narrador</label>
@@ -140,7 +145,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-primary" id="saveNarratorBtn">Guardar Cambios</button>
                 </div>
             </div>
         </div>

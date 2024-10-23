@@ -1,0 +1,11 @@
+{
+    "fontSize": "medium",
+    "contrast": {
+        "selected": "high-contrast"
+    },
+    "narrator": {
+        "voiceSpeed": 1.0,
+        "voiceVolume": 1.0,
+        "enableNarrator": true
+    }
+}
