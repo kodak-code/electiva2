@@ -17,13 +17,11 @@ btnDecrementar.addEventListener('click', () => {
     }
 });
 
-/* const selectTamaño = document.getElementById('select-tamaño');
-const precioElemento = document.createElement('p');
-precioElemento.id = 'precio-texto';
-precioElemento.textContent = 'Precio: $100';
-document.body.appendChild(precioElemento);
+const selectTamaño = document.getElementById('select-tamaño');
+const precioInput = document.getElementById("precio");
 
 selectTamaño.addEventListener('change', () => {
+    console.log(`Tamaño seleccionado: ${selectTamaño.value}`); // Para depuración
     let precio = 100;
     switch (selectTamaño.value) {
         case 'p':
@@ -36,9 +34,9 @@ selectTamaño.addEventListener('change', () => {
             precio = 200;
             break;
     }
-    precioElemento.textContent = `Precio: $${precio}`;
+    precioInput.value = precio;
 });
-*/
+
 
 function leerContenido() {
     const synth = window.speechSynthesis;
