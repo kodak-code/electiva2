@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <link href="EstilosConfirmarPedido.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JSConfirmarPedido.js" defer></script>
 
-    
+
+   
     <title>CONFIRMAR PEDIDO</title>
+
 
 </head>
 <body class="pedido">
 
+
     <div class="container-fluid mt-1">
 
-        <div class="row p-3">
-            <div class="col-12 d-flex justify-content-between">
-                <a href="/Pedido/pedido.html" target=""><img src="../iconos/left-arrow_614865.png" alt="volver" height="45px" width="50px"></a>
-                <a href="#" target=""><img src="../iconos/gear_850768.png" alt="configuracion" height="40px" width="40px"></a>
+
+        <header class="d-flex justify-content-between mt-5 mx-5">
+            <a href="/Pedido/pedido.html" id="btn-volver"><img src="/seccionInicio/iconos/left-arrow_614865.png" alt="volver" height="75px" width="75px"></a>
+            <div class="dropdown ms-2">
+              <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <h5 class="boton-style border border-secondary rounded p-3"><img src="../seccionInicio/iconos/gear_850768.png" alt="configuracion" height="40px" width="40px"></h5>
+              </a>
+              <ul class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
+                  data-bs-target="#voiceOptionsModal">Opciones de Narrador</button>
+                <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
+                  data-bs-target="#contrastModal">Contraste</button>
+                <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
+                  data-bs-target="#fontSizeModal">Tamaño de Fuente</button>
+              </ul>
             </div>
-        </div>
+          </header>
+
 
         <!-- Título -->
         <div class="row">
@@ -32,8 +49,9 @@
             </div>
         </div>
 
+
         <div class="mt-4 justify-content-center row"><!-- dividimos una parte para el pedido y otra para botones-->
-                
+               
             <div class="col-9 row "><!-- div para los items del pedido -->
                 <div class="col-lg-4 col-sm-0"></div>
                 <div class="col-lg-4 col-sm-12">
@@ -41,28 +59,34 @@
                         <img src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqXakvb9/200/200/original?country=ar" alt="Hamburguesa" class="img-fluid">
                         <p>HAMBURGUESA SIMPLE <br> CANTIDAD: 2</p>
                     </div>
-                    <div class="text-center mt-1">
+                    <!-- <div class="text-center mt-1">
                         <a href="#" target=""><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px" onclick=""></a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-4 col-sm-0"></div>
             </div>
-            
+           
             <div class="col-3 "><!-- div para botones -->
                 <div class="margen-botones" onclick="escucharPedido()">
-                    <button class="btn-custom item-orden w-100"><p>ESCUCHAR PEDIDO</p><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px"></button>
+                    <button class="btn-custom item-orden w-100"><p>ESCUCHAR PEDIDO</p><img src="/Pedido/img/parlante.jpg" alt="escuchar orden" height="50px" width="50px"></button>
                 </div>
                 <div class="mt-4">
-                    <button class="btn-custom item-orden w-100"><p>SEGUIR ORDENANDO</p><img src="../iconos/SeguirOrdenando.png" alt="escuchar orden" height="50px" width="50px"></button>
+                    <button class="btn-custom item-orden w-100"><p>SEGUIR ORDENANDO</p><img src="/Pedido/img/parlante.jpg" alt="escuchar orden" height="50px" width="50px"></button>
                 </div>
             <div class="mt-4">
-                <button class="btn-custom item-orden w-100"><p>FINALIZAR ORDEN</p><img src="../iconos/FinalizarOrden.png" alt="escuchar orden" height="50px" width="50px"></button>
+                <button class="btn-custom item-orden w-100"><p>FINALIZAR ORDEN</p><img src="/Pedido/img/parlante.jpg" alt="escuchar orden" height="50px" width="50px"></button>
             </div>
 
+
         </div>
+
 
         </div>
     </div>
 
+
 </body>
 </html>
+
+
+

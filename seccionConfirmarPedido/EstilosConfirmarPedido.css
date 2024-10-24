@@ -1,3 +1,6 @@
+body{
+    background-color:#fffbec !important;
+}
 .pedido {
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
@@ -24,5 +27,15 @@
     font-size: 2em;
 }
 .margen-botones{
-    margin-top: 440px;
+    margin-top: 40px;
+}
+.btn-custom:hover{
+    background-color: rgb(218, 214, 214);
+}
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+        margin-top: 15px !important;
+    }
 }
