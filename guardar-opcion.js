@@ -16,7 +16,7 @@ function applyFontSize(fontSize) {
 
 // Aplicar configuración de contraste
 function applyContrast(contrast) {
-    document.body.className = contrast; // Asegúrate de que tengas estilos CSS para cada clase
+    document.documentElement.setAttribute("data-theme", contrast); // Asegúrate de que tengas estilos CSS para cada clase
 }
 
 // Guardar configuración de Tamaño de Fuente
@@ -51,10 +51,6 @@ function saveContrast() {
     }
 }
 
-
-function applyContrast(contrast) {
-    document.body.className = contrast; // Asegúrate de tener clases CSS correspondientes
-}
 // Guardar configuración de Narrador
 function saveNarratorSettings() {
     const voiceSpeed = document.getElementById('voiceSpeed').value; // Obtener la velocidad de voz
@@ -76,7 +72,18 @@ function saveNarratorSettings() {
 // Cargar configuraciones desde localStorage al cargar la página
 function loadSettings() {
     // Cargar configuraciones desde JSON
-    fetch('settings.json')
+
+    let urlActual = window.location.href;
+    let palabraClave = "electiva2/";
+
+    // Encuentra el índice de la palabra "UIE/" en la URL
+    let indice = urlActual.indexOf(palabraClave);
+
+    if (indice !== -1) {
+        // Guarda la URL desde el inicio hasta la palabra "UIE/"
+        let urlCortada = urlActual.substring(0, indice + palabraClave.length);
+
+        fetch(urlCortada + '/settings.json')
         .then(response => response.json())
         .then(config => {
             console.log('Configuración cargada desde settings.json:', config); // Mostrar la configuración en consola
@@ -105,6 +112,8 @@ function loadSettings() {
         .catch(error => {
             console.error('Error loading settings:', error);
         });
+    }
+    
 }
 
 

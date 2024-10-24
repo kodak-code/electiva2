@@ -4,15 +4,15 @@ const cambiarTemaContraste = document.getElementById("highContrastMode");
 
 //normal
 cambiarTemaLight.addEventListener("click", () => {
-    document.body.removeAttribute("data-theme");
+    document.documentElement.removeAttribute("data-theme");
 });
 
 //oscuro
 cambiarTemaDark.addEventListener("click", () => {
-    document.body.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
 });
 
 //contraste
 cambiarTemaContraste.addEventListener("click", () => {
-    document.body.setAttribute("data-theme", "high-contrast");
+    document.documentElement.setAttribute("data-theme", "high-contrast");
 });
