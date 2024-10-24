@@ -28,3 +28,11 @@ body a{
     grid-template-rows: repeat(2, auto); /* 2 filas */
     gap: 1.5rem; /* Espacio entre las tarjetas */
 }
+
+button{
+    color: var(--color-texto-secundario) !important;
+}
+
+.btn > i{
+    color: var(--color-texto-secundario) !important;
+}

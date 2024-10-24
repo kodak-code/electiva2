@@ -27,7 +27,7 @@ const Categorias = [
         id: 5,
         nombre: "BEBIDAS",
         href: "#bebidas",
-        imagen: "./imgs-categorias/bebidas.png"
+        imagen: "./imgs-opciones/agua.png"
     },
     {
         id: 6,

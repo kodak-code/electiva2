@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./categorias.css">
   <link rel="stylesheet" href="../globals.css">
+  <link rel="stylesheet" href="./categorias.css">
   <script src="../cambiar-tema.js" defer></script>
   <script src="../guardar-opcion.js" defer></script>
   <script src="../categorias/categorias.js" defer></script>
@@ -20,11 +20,13 @@
 
 <body>
   <header class="d-flex justify-content-between mt-5 mx-5">
-    <a href="" id="btn-volver"><img src="../seccionInicio/iconos/left-arrow_614865.png" alt="volver" height="75px" width="75px"></a>
+    <a href="" id="btn-volver">
+      <button class="btn btn-outline-dark btn-lg"><i class="bi bi-arrow-left me-2"></i> Volver</button>
+    </a>
     
     <div class="dropdown ms-2">
       <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-        <h5 class="boton-style border border-secondary rounded p-3"><img src="../seccionInicio/iconos/gear_850768.png" alt="configuracion" height="40px" width="40px"></h5>
+        <h5 class="boton-style border border-secondary rounded p-3"><i class="bi bi-gear-fill" style="font-size: 2rem;"></i></h5>
       </a>
       <ul class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenuButton">
         <li><a class="dropdown-item" href="#">Configuración</a></li>
@@ -134,7 +136,7 @@
 
   <footer class="d-flex justify-content-end mt-5 mx-5">
     <a href="../Pedido/pedido.html">
-      <h5 class="boton-style border border-secondary rounded p-3">FINALIZAR ORDEN</h5>
+      <button class="btn btn-outline-dark btn-lg">FINALIZAR ORDEN<i class="bi bi-check-circle-fill text-success ms-2" style="font-size: 2rem;"></i></button>
     </a>
   </footer>
 </body>
