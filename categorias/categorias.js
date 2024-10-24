@@ -271,6 +271,15 @@ function obtenerOpciones(Opciones){
                     </div>
                 </a>
             `;
+        }else if(Opciones == MenuDelDia && opcion.nombre == "HAMBURGUESA SIMPLE"){
+            optionsContainer.innerHTML += `
+                <a href="../Pedido/pedido.html" class="item-categoria">
+                    <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded">
+                            <h5 class="card-title mt-3">${opcion.nombre}</h5>
+                            <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
+                    </div>
+                </a>
+            `;
         }else{
             optionsContainer.innerHTML += `
                 <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded">
