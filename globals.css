@@ -66,3 +66,11 @@ a{
   color: var(--color-texto-secundario) !important;
   background-color: var(--color-fondo-elementos) !important;
 }
+
+.card{
+  background-color: var(--color-fondo)  !important;
+}
+
+.card-title{
+  color: var(--color-texto-principal) !important;
+}
