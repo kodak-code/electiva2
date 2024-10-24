@@ -11,43 +11,48 @@
         <script src="pedido.js" defer></script>
 </head>
 <body>
-    <a href="../categorias/categorias.html"><img src="../seccionInicio/iconos/left-arrow_614865.png" alt="volver" height="75px" width="75px"></a>
-    
+    <a href="../categorias/categorias.html"><button type="button" class="btn mt-4 mx-4"><img class="" src="../seccionInicio/iconos/left-arrow_614865.png" alt="volver" height="45px" width="50px"></button></a>
+    <h1 class="text-center">PEDIDO</h1>
     <div class="row">
         <div class="container col d-flex  m-5">
-            <button type="button" class="btn-parlante p-5"> 
-                <img class="img-parlante" src="../seccionInicio/iconos/sound.png" alt="Parlante" width="70px">
+            <button type="button" class="boton-icono p-5"> 
+                <img class="" src="../seccionInicio/iconos/sound.png" alt="Parlante" width="85px">
             </button>
-            <div class="container col d-flex">
-                <img class="img-pedido border rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4v9ZOjaNm1zD-WIX6zAC7Fl2gzei6xEUf3g&s"  alt="Hamburguesa Simple">
-                <div class="col mx-5">
-                    <h3>HAMBURGUESA SIMPLE</h3>
-                    <div class="d-flex mt-5">
-                        <label class="me-5">CANTIDAD:</label>
-                        <p id="cantidad-texto" class="ms-5">1</p>
-                        <div class="ms-4">
-                        <button type="button" class="btn mx-2">
-                            <img class="" src="../seccionInicio/iconos/+.png" width="30px"  alt="Hamburguesa Simple">
-                        </button>
-                        <button type="button" class="btn mx-2">
-                            <img class="" src="../seccionInicio/iconos/-.png" width="30px alt="Hamburguesa Simple">
-                        </button>
-                    </diV>
-                    </div>
-                    <div>
-                        <label for="">TAMAÑO</label>
-                        <select class="form-select w-50" id="select-tamaño">
-                            <option value="p">Pequeña</option>
-                            <option value="m">Mediana</option>
-                            <option value="g">Grande</option>
-                        </select>
-                    </div>
+            <div class="container col">
+                <div class="contenedor-img-pedido d-flex justify-content-center">
+                    <img class="img-pedido img-fluid" src="../categorias/imgs-opciones/hamburguesa-simple.png" alt="Hamburguesa Simple">
                 </div>
             </div>
+            <div class="col">
+                <h3>HAMBURGUESA SIMPLE</h3>
+                <div class="d-flex">
+                    <div class="cantidad-box d-flex mt-5">
+                        <label class="me-5">CANTIDAD:</label>
+                        <p id="cantidad-texto" class="ms-5">1</p>
+                    </div>
+                    <div class="ms-4 d-flex mt-4">
+                        <button type="button" class="btn boton-icono mx-2">
+                            <img class="" src="../seccionInicio/iconos/+.png" width="40px"  alt="mas">
+                        </button>
+                        <button type="button" class="btn boton-icono mx-2">
+                            <img class="" src="../seccionInicio/iconos/-.png" width="40px" alt="menos">
+                        </button>
+                    </diV>
+                </div>
+                <div>
+                    <label for="">TAMAÑO</label>
+                    <select class="form-select w-50 mt-2" id="select-tamaño">
+                        <option value="p">Pequeña</option>
+                        <option value="m">Mediana</option>
+                        <option value="g">Grande</option>
+                    </select>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <div class="d-flex justify-content-end m-4">
-        <a href="/vistaAgregarIngrediente.html"><button type="button" class="btn btn-dark">SIGUIENTE</button></a>
+    <div class="d-flex justify-content-end me-4">
+        <a href="/seccionConfirmarPedido/InterfazConfirmarPedido.html"><button type="button" class="btn">SIGUIENTE</button></a>
     </div>
 </body>
 </html>

@@ -1,13 +1,17 @@
-.btn{
-    font-size: 1.40rem;
+.contenedor-img-pedido
+{
+    width: 100% !important; 
+    max-width: 768px !important;
+    height: 100% !important;
+    max-height: 450px !important;
+    padding: 30px !important;
+    margin: auto !important;
 }
 
-
-
-.img-pedido {
-    width: 500px; 
-    height: auto; 
-    border-radius: 20px;
-    border: 2px solid black;
+.img-pedido
+{
+    margin: 20px !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
-

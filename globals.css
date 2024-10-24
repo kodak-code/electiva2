@@ -4,8 +4,9 @@
   --color-texto-principal: #212121;
   --color-texto-secundario: #333;
   --color-fondo-elementos: #F5F5F5;
-  --color-icono:  #000000;
-  --color-bordes: #E0E0E0;
+  --color-icono:  #212121;
+  --color-bordes: #212121;
+  --color-enlaces: #2600ff;
 }
 
 /* Modo Oscuro */
@@ -14,8 +15,9 @@
   --color-texto-principal: #E0E0E0;
   --color-texto-secundario: #B3B3B3;
   --color-fondo-elementos: #1E1E1E;
-  --color-icono:  #FFFFFF;
+  --color-icono:  #E0E0E0;
   --color-bordes: #333333;
+  --color-enlaces: #2600ff;
 }
 
 /* Modo Alto Contraste */
@@ -24,8 +26,9 @@
   --color-texto-principal: #FFFF00;
   --color-texto-secundario: #000000;
   --color-fondo-elementos: #18d0ff;
-  --color-icono:  #ffffff;
+  --color-icono:  #18d0ff;
   --color-bordes: #FFFF00;
+  --color-enlaces: #FFFFFF;
 }
 
 
@@ -35,13 +38,36 @@ body {
   font-family: Arial, Helvetica, sans-serif !important;/*Fuente elegida*/
 }
 
+h1,h2,h3,h4
+{
+/*   font-family: 'Comic Sans MS', cursive, sans-serif; */
+  font-weight: bold;
+}
+
+label
+{
+  font-weight: bold;
+}
 
 button {
   background-color: var(--color-fondo-elementos) !important;
-  border: 1px solid var(--color-bordes) !important;
-  color: var(--color-texto-secundario) !important;
+  border: 2px solid var(--color-bordes) !important;
+  border-radius: 10px;
+  color: var(--color-texto-principal) !important;
   font-weight: bold !important;
-  padding: 15px !important;
+  padding: 10px !important;
+  cursor: pointer;
+}
+
+button.boton-icono {
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0px !important; 
+  cursor: pointer;
+}
+
+button.dropdown-item {
+  border: none !important;
 }
 
 i {
@@ -63,14 +89,21 @@ i {
 }
 
 a{
-  color: var(--color-texto-secundario) !important;
-  background-color: var(--color-fondo-elementos) !important;
+  color: var(--color-texto-enlaces) !important;
+}
+
+select
+{
+  background-color: var(--color-fondo-elementos)  !important;
+  color: var(--color-texto-principal) !important;
+  border: 2px solid var(--color-bordes) !important;
 }
 
 .card{
-  background-color: var(--color-fondo)  !important;
+  background-color: var(--color-fondo-elementos)  !important;
+  border: 3px solid var(--color-bordes) !important;
 }
 
 .card-title{
-  color: var(--color-texto-principal) !important;
+  color: var(--color-texto-secundario) !important;
 }
