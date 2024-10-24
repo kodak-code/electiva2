@@ -1,17 +1,17 @@
 .contenedor-img-pedido
 {
     width: 100% !important; 
-    max-width: 768px !important;
+    max-width: 300px !important;
     height: 100% !important;
-    max-height: 450px !important;
-    padding: 30px !important;
+    max-height: 300px !important;
     margin: auto !important;
 }
 
 .img-pedido
 {
-    margin: 20px !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    border: 2px solid var(--color-bordes) !important;
+    border-radius: 10px;
 }

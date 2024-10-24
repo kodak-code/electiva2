@@ -1,7 +1,7 @@
 let cantidad = 1;
 const cantidadElemento = document.getElementById('cantidad-texto');
-const btnIncrementar = document.querySelector('.bi-plus-lg');
-const btnDecrementar = document.querySelector('.bi-dash-lg');
+const btnIncrementar = document.getElementById('mas');
+const btnDecrementar = document.getElementById('menos');
  
 btnIncrementar.addEventListener('click', () => {
     if (cantidad < 10) {
@@ -16,13 +16,13 @@ btnDecrementar.addEventListener('click', () => {
         cantidadElemento.textContent = cantidad;
     }
 });
- 
-const selectTamaño = document.getElementById('select-tamaño');
+
+/* const selectTamaño = document.getElementById('select-tamaño');
 const precioElemento = document.createElement('p');
 precioElemento.id = 'precio-texto';
 precioElemento.textContent = 'Precio: $100';
 document.body.appendChild(precioElemento);
- 
+
 selectTamaño.addEventListener('change', () => {
     let precio = 100;
     switch (selectTamaño.value) {
@@ -38,7 +38,8 @@ selectTamaño.addEventListener('change', () => {
     }
     precioElemento.textContent = `Precio: $${precio}`;
 });
- 
+*/
+
 function leerContenido() {
     const synth = window.speechSynthesis;
     const texto = obtenerTextoDeLaPagina();
@@ -63,5 +64,5 @@ function obtenerTextoDeLaPagina() {
     return texto;
 }
  
-const btnParlante = document.querySelector('.btn-parlante');
+const btnParlante = document.getElementById('btn-parlante');
 btnParlante.addEventListener('click', leerContenido);
