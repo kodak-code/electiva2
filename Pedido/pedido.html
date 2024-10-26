@@ -40,12 +40,11 @@
             </ul>
         </div>
     </header>
-        <h1 class="text-center mb-5">PEDIDO</h1>
-        <section class="">
+    <h1 class="text-center mb-5">PEDIDO</h1>
         <div class="pedido-box row">
-            <div class="col-md-6">       
+            <div class="col-md-6 col-sm-12 mt-4">       
                 <div class="div-parlante container d-flex">
-                    <button type="button" class="boton-icono p-5" id="btn-parlante"> 
+                    <button type="button" class="boton-icono p-3" id="btn-parlante"> 
                         <i class="parlante bi bi-volume-up"></i>
                     </button>
                     <div class="container">
@@ -55,42 +54,47 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="container-fluid">
-                    <h3>HAMBURGUESA SIMPLE</h3>
-                    <div class="d-flex">
-                        <div class="cantidad-box d-flex mt-5">
-                            <label class="mt-2 h5">CANTIDAD</label>
+            <div class="col-md-6 col-sm-12 mt-4">
+                <h3 class="mb-5">HAMBURGUESA SIMPLE</h3>
+                <div class="container w-75 row">
+                    <div class="container d-flex row col">
+                        <div class="col-md-4 col-sm-12 mt-3">
+                            <label class="mt-2 h5 me-5">CANTIDAD</label>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mt-3">
                             <p id="cantidad-texto" class="cantidad-texto">1</p>
                         </div>
-                        <div class="plus-dash d-flex mt-4"> 
+                        <div class="plus-dash col-md-4 col-sm-6"> 
                             <button type="button" class="btn boton-icono dash" id="menos">
                                 <i class="bi bi-dash-circle" style="font-size: 3rem;"></i>
                             </button>
-                            <button type="button" class="btn boton-icono mx-2" id="mas">
+                            <button type="button" class="btn boton-icono" id="mas">
                                 <i class="bi bi-plus-circle" style="font-size: 3rem;"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="w-75 d-flex">
-                        <label for="select-tamaño" class="me-5 mt-2 h5">TAMAÑO</label>
-                        <select class="form-select" id="select-tamaño">
-                            <option selected disabled>Selecciona una opción</option>
-                            <option value="p">Pequeña</option>
-                            <option value="m">Mediana</option>
-                            <option value="g">Grande</option>
-                        </select>
+                    <div class="col-lg-12 mt-5 row">
+                        <div class="col-md-6">
+                            <label for="select-tamaño" class="h5">TAMAÑO</label>
+                        </div>
+                        <div class="select-tamaño col-md-6">
+                            <select class="form-select w-75" id="select-tamaño">
+                                <option value="p" selected>Pequeña</option>
+                                <option value="m">Mediana</option>
+                                <option value="g">Grande</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>         
+            <div class="input-group mt-5">
+                <label class="me-5 mt-2 h5">PRECIO</label>
+                <span class="input-group-text">$</span>
+                <input type="text" class="precio-input form-control" aria-label="precio de la comida" id="precio" readonly>
+                <span class="input-group-text">.00</span>
+            </div>
         </div>
-        <div class="input-group mt-5">
-            <label class="me-5 mt-2 h5">PRECIO</label>
-            <span class="input-group-text">$</span>
-            <input type="text" class="precio-input form-control" aria-label="precio de la comida" id="precio" readonly>
-            <span class="input-group-text">.00</span>
-        </div>
-        </section>
+    
         
     
     

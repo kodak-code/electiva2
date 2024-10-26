@@ -1,13 +1,9 @@
-label{
-    font-size: 20px;
-}
-
 .contenedor-img-pedido
 {
     width: 100% !important; 
-    max-width: 400px !important;
+    max-width: 500px !important;
     height: 100% !important;
-    max-height: 300px !important;
+    max-height: 350px !important;
     margin-left: 75px !important;
 }
 
@@ -23,19 +19,13 @@ label{
 .div-parlante
 {
     margin-left: 75px;
-}
-.parlante
-{
-    font-size: 5rem;
+    font-size: 80px;
 }
 
-.plus-dash
-{
-    margin-left: 30px;
-}
 
 .cantidad-texto {
-    margin-left: 250px;
+
+
     font-size: 22px;
     display: inline-block;
     background-color: var(--color-fondo-elementos)  !important;
@@ -46,12 +36,11 @@ label{
     padding-right: 15px;
     padding-top: 4px;
     padding-bottom: 2px;
-    align-self: auto;
 }
 
 .input-group
 {
-    margin-left: 90px !important;
+    margin-left: 250px !important; 
 }
 .precio-input
 {
@@ -74,4 +63,5 @@ span
 .form-select
 {
     font-size: 20px !important;
+
 }
