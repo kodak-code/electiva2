@@ -18,16 +18,16 @@
         
 </head>
 <body>
-    <header class="d-flex justify-content-between mt-5 mx-5">
+    <header class="d-flex justify-content-between">
         <a href="../categorias/categorias.html">
-            <button class="btn btn-outline btn-lg">
+            <button class="btn btn-outline btn-lg mt-5 mx-5">
                 <i class="bi bi-arrow-left me-2"></i> Volver
             </button>
         </a>
         
-        <div class="dropdown ms-2">
+        <div class="dropdown ">
             <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <h5 class="boton-style border border-secondary rounded p-3"><i class="bi bi-gear-fill" style="font-size: 2rem;"></i></h5>
+                <h5 class="boton-style border border-secondary rounded p-3 mt-5 mx-5"><i class="bi bi-gear-fill" style="font-size: 2rem;"></i></h5>
             </a>
             <ul class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="#">Configuración</a></li>
@@ -65,11 +65,11 @@
                             <p id="cantidad-texto" class="cantidad-texto">1</p>
                         </div>
                         <div class="plus-dash col-md-4 col-sm-6"> 
-                            <button type="button" class="btn boton-icono dash" id="menos">
-                                <i class="bi bi-dash-circle" style="font-size: 3rem;"></i>
+                            <button type="button" class="btn boton-icono ms-4 me-3" id="menos">
+                                <i class="bi bi-dash-circle" style="font-size: 4rem;"></i>
                             </button>
                             <button type="button" class="btn boton-icono" id="mas">
-                                <i class="bi bi-plus-circle" style="font-size: 3rem;"></i>
+                                <i class="bi bi-plus-circle" style="font-size: 4rem;"></i>
                             </button>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             <label for="select-tamaño" class="h5">TAMAÑO</label>
                         </div>
                         <div class="select-tamaño col-md-6">
-                            <select class="form-select w-75" id="select-tamaño">
+                            <select class="form-select w-100" id="select-tamaño">
                                 <option value="p" selected>Pequeña</option>
                                 <option value="m">Mediana</option>
                                 <option value="g">Grande</option>
@@ -88,7 +88,7 @@
                 </div>
             </div>         
             <div class="input-group mt-5">
-                <label class="me-5 mt-2 h5">PRECIO</label>
+                <label class="mx-5 mt-2 h5">PRECIO</label>
                 <span class="input-group-text">$</span>
                 <input type="text" class="precio-input form-control" aria-label="precio de la comida" id="precio" readonly>
                 <span class="input-group-text">.00</span>

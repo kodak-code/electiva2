@@ -24,24 +24,21 @@
 
 
 .cantidad-texto {
-
-
-    font-size: 22px;
+    font-size: 1.5rem;
     display: inline-block;
+    font-weight: bold;
     background-color: var(--color-fondo-elementos)  !important;
     color: var(--color-texto-secundario)  !important;
     border-radius: 10px;
-    border: 1px solid var(--color-bordes) !important;
+    border: 3px solid var(--color-bordes) !important;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 4px;
     padding-bottom: 2px;
+    margin-left: 105px;
 }
 
-.input-group
-{
-    margin-left: 250px !important; 
-}
+
 .precio-input
 {
     max-width: 80px;
