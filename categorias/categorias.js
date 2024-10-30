@@ -1,9 +1,9 @@
 const Categorias = [
     {
         id: 1,
-        nombre: "MENÚ DEL DÍA",
-        href: "#menu-del-dia",
-        imagen: "./imgs-categorias/CartaMenu.png"
+        nombre: "COMIDA RÁPIDA",
+        href: "#comida-rapida",
+        imagen: "./imgs-categorias/comida_rapida.png"
     },
     {
         id: 2,
@@ -37,7 +37,7 @@ const Categorias = [
     }
 ];
 
-const MenuDelDia = [
+const ComidaRapida = [
     {
         id: 1,
         nombre: "HAMBURGUESA SIMPLE",
@@ -271,7 +271,7 @@ function obtenerOpciones(Opciones){
                     </div>
                 </a>
             `;
-        }else if(Opciones == MenuDelDia && opcion.nombre == "HAMBURGUESA SIMPLE"){
+        }else if(Opciones == ComidaRapida && opcion.nombre == "HAMBURGUESA SIMPLE"){
             optionsContainer.innerHTML += `
                 <a href="../Pedido/pedido.html" class="item-categoria">
                     <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded">
@@ -302,11 +302,11 @@ function manejarContenido(seccion){
 
     switch (seccion) {
 
-        case '#menu-del-dia':
-            SeccionTitulo.textContent = "MENÚ DEL DÍA";
+        case '#comida-rapida':
+            SeccionTitulo.textContent = "COMIDA RÁPIDA";
             optionsContainer.innerHTML = ``;
             btnVolver.href = "#";
-            obtenerOpciones(MenuDelDia);
+            obtenerOpciones(ComidaRapida);
             break;
 
         case '#entrada':
