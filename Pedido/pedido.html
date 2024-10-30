@@ -15,6 +15,7 @@
         <script src="pedido.js" defer></script>
         <script src="../guardar-opcion.js" defer></script>
         <script src="../cambiar-tema.js" defer></script>
+        <script src="../guardar-pedido.js" defer></script>
         
 </head>
 <body>
@@ -49,13 +50,13 @@
                     </button>
                     <div class="container">
                         <div class="contenedor-img-pedido d-flex justify-content-center">
-                            <img class="img-pedido img-fluid" src="../categorias/imgs-opciones/hamburguesa-simple.png" alt="Hamburguesa Simple">
+                            <img class="img-pedido img-fluid" src="" alt="Imagen del pedido" id="imagen">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 mt-4">
-                <h3 class="mb-5">HAMBURGUESA SIMPLE</h3>
+                <h3 class="mb-5" id="nombre"></h3>
                 <div class="container w-75 row">
                     <div class="container d-flex row col">
                         <div class="col-md-4 col-sm-12 mt-3">
@@ -94,9 +95,117 @@
                 <span class="input-group-text">.00</span>
             </div>
         </div>
-    
-        
-    
+
+
+<!-- pedido 2 y 3 -->        
+       <!--  <div class="pedido-box row d-none">
+            <div class="col-md-6 col-sm-12 mt-4">       
+                <div class="div-parlante container d-flex">
+                    <button type="button" class="boton-icono p-3" id="btn-parlante"> 
+                        <i class="parlante bi bi-volume-up"></i>
+                    </button>
+                    <div class="container">
+                        <div class="contenedor-img-pedido d-flex justify-content-center">
+                            <img class="img-pedido img-fluid" src="" alt="Imagen del pedido" id="imagen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-4">
+                <h3 class="mb-5" id="nombre"></h3>
+                <div class="container w-75 row">
+                    <div class="container d-flex row col">
+                        <div class="col-md-4 col-sm-12 mt-3">
+                            <label class="mt-2 h5 me-5">CANTIDAD</label>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <p id="cantidad-texto" class="cantidad-texto">1</p>
+                        </div>
+                        <div class="plus-dash col-md-4 col-sm-6"> 
+                            <button type="button" class="btn boton-icono ms-4 me-3" id="menos">
+                                <i class="bi bi-dash-circle" style="font-size: 4rem;"></i>
+                            </button>
+                            <button type="button" class="btn boton-icono" id="mas">
+                                <i class="bi bi-plus-circle" style="font-size: 4rem;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-5 row">
+                        <div class="col-md-6">
+                            <label for="select-tamaño" class="h5">TAMAÑO</label>
+                        </div>
+                        <div class="select-tamaño col-md-6">
+                            <select class="form-select w-100" id="select-tamaño">
+                                <option value="p" selected>Pequeña</option>
+                                <option value="m">Mediana</option>
+                                <option value="g">Grande</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+            <div class="input-group mt-5">
+                <label class="mx-5 mt-2 h5">PRECIO</label>
+                <span class="input-group-text">$</span>
+                <input type="text" class="precio-input form-control" aria-label="precio de la comida" id="precio" readonly>
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+
+        <div class="pedido-box row d-none">
+            <div class="col-md-6 col-sm-12 mt-4">       
+                <div class="div-parlante container d-flex">
+                    <button type="button" class="boton-icono p-3" id="btn-parlante"> 
+                        <i class="parlante bi bi-volume-up"></i>
+                    </button>
+                    <div class="container">
+                        <div class="contenedor-img-pedido d-flex justify-content-center">
+                            <img class="img-pedido img-fluid" src="" alt="Imagen del pedido" id="imagen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-4">
+                <h3 class="mb-5" id="nombre"></h3>
+                <div class="container w-75 row">
+                    <div class="container d-flex row col">
+                        <div class="col-md-4 col-sm-12 mt-3">
+                            <label class="mt-2 h5 me-5">CANTIDAD</label>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <p id="cantidad-texto" class="cantidad-texto">1</p>
+                        </div>
+                        <div class="plus-dash col-md-4 col-sm-6"> 
+                            <button type="button" class="btn boton-icono ms-4 me-3" id="menos">
+                                <i class="bi bi-dash-circle" style="font-size: 4rem;"></i>
+                            </button>
+                            <button type="button" class="btn boton-icono" id="mas">
+                                <i class="bi bi-plus-circle" style="font-size: 4rem;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-5 row">
+                        <div class="col-md-6">
+                            <label for="select-tamaño" class="h5">TAMAÑO</label>
+                        </div>
+                        <div class="select-tamaño col-md-6">
+                            <select class="form-select w-100" id="select-tamaño">
+                                <option value="p" selected>Pequeña</option>
+                                <option value="m">Mediana</option>
+                                <option value="g">Grande</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+            <div class="input-group mt-5">
+                <label class="mx-5 mt-2 h5">PRECIO</label>
+                <span class="input-group-text">$</span>
+                <input type="text" class="precio-input form-control" aria-label="precio de la comida" id="precio" readonly>
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+     -->
     
 
     <!-- MODALES -->
@@ -182,8 +291,8 @@
     </div>
 
     <footer class="d-flex justify-content-end mt-5 mx-5">
-        <a href="/seccionConfirmarPedido/InterfazConfirmarPedido.html">
-            <button class="btn btn-lg mb-4">
+        <a href="/seccionConfirmarOrden/InterfazConfirmarOrden.html">
+            <button type="button" class="btn btn-lg mb-4" id="boton-seguir">
                 Siguiente <i class="bi bi-arrow-right ms-2"></i>
             </button></a>
     </footer>

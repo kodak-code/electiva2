@@ -4,104 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="../globals.css">
     <link href="EstilosConfirmarOrden.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="JSConfirmarOrden.js" defer></script>
     <script src="../guardar-opcion.js" defer></script>
     <script src="../cambiar-tema.js" defer></script>
-
+    <script src="../guardar-pedido.js" defer></script>
+    <script src="../ver-orden.js" defer></script>
     
     <title>CONFIRMAR ORDEN</title>
 
 </head>
 <body class="pedido">
-    <div class="container-fluid mt-1">
 
-        <div class="row p-3">
-            <div class="col-12 d-flex justify-content-between">
-                <a href="#" target=""><img src="../iconos/left-arrow_614865.png" alt="volver" height="45px" width="50px"></a>
-                <div class="dropdown ms-2">
-                    <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                      <h5 class="boton-style border border-secondary rounded p-3"><i class="bi bi-gear-fill" style="font-size: 2rem;"></i></h5>
-                    </a>
-                    <ul class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="#">Configuración</a></li>
-                      <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
-                        data-bs-target="#voiceOptionsModal">Opciones de Narrador</button>
-                      <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
-                        data-bs-target="#contrastModal">Contraste</button>
-                      <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
-                        data-bs-target="#fontSizeModal">Tamaño de Fuente</button>
-                    </ul>
-                </div>
+    <header class="d-flex justify-content-between">
+        <a href="../Pedido/pedido.html">
+            <button class="btn btn-outline btn-lg mt-5 mx-5">
+                <i class="bi bi-arrow-left me-2"></i> Volver
+            </button>
+        </a>
+        
+        <div class="dropdown">
+            <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <h5 class="boton-style border border-secondary rounded p-3 mt-5 mx-5"><i class="bi bi-gear-fill" style="font-size: 2rem;"></i></h5>
+            </a>
+            <ul class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
+                data-bs-target="#voiceOptionsModal">Opciones de Narrador</button>
+                <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
+                data-bs-target="#contrastModal">Contraste</button>
+                <button type="button" class="dropdown-item opcion-config" data-bs-toggle="modal"
+                data-bs-target="#fontSizeModal">Tamaño de Fuente</button>
+            </ul>
+        </div>
+    </header>
+    
+    <h1 class="text-center mb-5">ORDEN - <span id="llevar-local"></span></h1>
+        
+    <div class="row justify-content-center text-center mx-5">
+
+        <div class="col-lg-4 col-sm-6" id="orden1">
+            <div class="item-orden min-comida">
+                <h4 class="mt-4">ORDEN 1</h4>
+                <img src="" alt="Imagen Orden 1" class="img-fluid" id="imagen-orden1">
+                <h5 id="nombre-orden1"></h5>
+                <h5>Cantidad:<span id="cantidad-orden1"></span></h5>
+                <h5>Tamaño:<span id="tamaño-orden1"></span></h5>
+                <h5>Precio: <span id="precio-orden1"></span></h5> 
+            </div>
+            <div class="text-center mt-2">
+                <button type="button" class="boton-icono" id="btn-parlante"> 
+                    <i class="parlante bi bi-volume-up" style="font-size: 4rem;"></i>
+                </button>
             </div>
         </div>
+    
 
-        <!-- Título -->
-            <div class="row">
-                <h2 class="col-1"></h2>
-                <h2 class="col-4"><strong>ORDEN - PARA LLEVAR</strong></h2>
-            </div>
-
-
-        <div class="mt-4 justify-content-center row"><!-- dividimos una parte para el pedido y otra para botones-->
-                
-            <div class="col-9 row "><!-- div para los items del pedido -->
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item-orden min-comida">
-                        <p>ORDEN 1</p>
-                        <img src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqXakvb9/200/200/original?country=ar" alt="Hamburguesa" class="img-fluid">
-                        <p>HAMBURGUESA SIMPLE <br> CANTIDAD: 2</p>
-                    </div>
-                    <div class="text-center mt-1">
-                        <a href="#" target=""><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px" onclick=""></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item-orden min-comida">
-                        <p>ORDEN 2 </p> 
-                        <img src="https://www.cocinaygastronomia.com/wp-content/uploads/2012/03/photodune-1669472-french-fries-xs.jpg" alt="Papas Fritas" class="img-fluid">
-                        <p>PAPAS GRANDES <br> CANTIDAD: 6</p>
-                    </div>
-                    <div class="text-center mt-1">
-                        <a href="#" target=""><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px" onclick=""></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item-orden min-comida">
-                        <p>ORDEN 1</p>
-                        <img src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqXakvb9/200/200/original?country=ar" alt="Hamburguesa" class="img-fluid">
-                        <p>HAMBURGUESA SIMPLE <br> CANTIDAD: 2</p>
-                    </div>
-                    <div class="text-center mt-1">
-                        <a href="#" target=""><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px" onclick=""></a>
-                    </div>
-                </div>
-
-                
-            </div>
-            <div class="col-3 "><!-- div para botones -->
-                    <div class="margen-botones" onclick="escucharPedido()">
-                        <button class="btn-custom item-orden w-100"><p>ESCUCHAR PEDIDO</p><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px"></button>
-                    </div>
-                <div class="mt-4">
-                    <button class="btn-custom item-orden w-100"><p>FINALIZAR ORDEN</p><img src="../iconos/FinalizarOrden.png" alt="escuchar orden" height="50px" width="50px"></button>
-                </div>
-
-            </div>
+    <div class="col-lg-4 col-sm-6 d-none" id="orden2">
+        <div class="item-orden min-comida">
+            <h4 class="mt-4">ORDEN 2</h4>
+            <img src="" alt="Imagen Orden 2" class="img-fluid" id="imagen-orden2">
+            <h5 id="nombre-orden2"></h5>
+            <h5>Cantidad:<span id="cantidad-orden2"></span></h5>
+            <h5>Tamaño:<span id="tamaño-orden2"></span></h5>
+            <h5>Precio: <span id="precio-orden2"></span></h5> 
+        </div>
+        <div class="text-center mt-2">
+            <button type="button" class="boton-icono" id="btn-parlante"> 
+                <i class="parlante bi bi-volume-up" style="font-size: 4rem;"></i>
+            </button>
         </div>
     </div>
 
+    <div class="col-lg-4 col-sm-6 d-none" id="orden3">
+        <div class="item-orden min-comida">
+            <h4 class="mt-4">ORDEN 3</h4>
+            <img src="" alt="Imagen Orden 3" class="img-fluid" id="imagen-orden3">
+            <h5 id="nombre-orden3"></h5>
+            <h5>Cantidad:<span id="cantidad-orden3"></span></h5>
+            <h5>Tamaño:<span id="tamaño-orden3"></span></h5>
+            <h5>Precio: <span id="precio-orden3"></span></h5> 
+        </div>
+        <div class="text-center mt-2">
+            <button type="button" class="boton-icono" id="btn-parlante"> 
+                <i class="parlante bi bi-volume-up" style="font-size: 4rem;"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="mt-4 col-3 d-flex">
+            <button type="button" class="boton-icono" id="btn-parlante"> 
+                <i class="parlante bi bi-volume-up" style="font-size: 3rem;"></i>
+            </button>
+            <button class="btn-custom item-orden w-75">SEGUIR ELIGIENDO</button>
+        </div>
+        <div class="mt-4 col-3 d-flex">
+            <button type="button" class="boton-icono" id="btn-parlante"> 
+                <i class="parlante bi bi-volume-up" style="font-size: 3rem;"></i>
+            </button>
+            <button class="btn-custom item-orden w-75">ESCUCHAR ORDEN</button>
+        </div>
+        <div class="mt-4 col-3 d-flex">
+            <button type="button" class="boton-icono" id="btn-parlante"> 
+                <i class="parlante bi bi-volume-up" style="font-size: 3rem;"></i>
+            </button>
+            <button class="btn-custom item-orden w-75">CONFIRMAR ORDEN</button>
+        </div>
+    </div>
+    
+
     <!-- MODALES -->
-    <div class="modal fade" id="fontSizeModal" tabindex="-1" aria-labelledby="fontSizeModalLabel" aria-hidden="true">
+     <div class="modal fade" id="fontSizeModal" tabindex="-1" aria-labelledby="fontSizeModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -184,30 +208,4 @@
 
 </body>
 </html>
-<!---
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item-orden min-comida">
-                        <p>ORDEN 1</p>
-                        <img src="https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqXakvb9/200/200/original?country=ar" alt="Hamburguesa" class="img-fluid">
-                        <p>HAMBURGUESA SIMPLE <br> CANTIDAD: 2</p>
-                        <div class="text-center mt-1">
-                            <a href="#" target=""><img src="../iconos/check.png" alt="" height="30px" width="30px" ></a>
-                            <a href="#" target=""><img src="../iconos/close.png" alt="" height="27px" width="27px"></a>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="#" target=""><img src="../iconos/sound.png" alt="escuchar orden" height="50px" width="50px"></a>
-                        </div>
-                        
-                    </div>
-                    <div class="text-center mt-3">
-                        <a href="#" target=""><img src="../iconos/+.png" alt="volver" height="30px" width="30px"></a>
-                        <a href="#" target=""><img src="../iconos/-.png" alt="configuracion" height="30px" width="30px"></a>
-                    </div>
-                </div>
 
-
-
-
-
-
--->
