@@ -265,7 +265,7 @@ function obtenerOpciones(Opciones){
         if (Opciones == Categorias) {
             optionsContainer.innerHTML += `
                 <a href="${opcion.href}" class="item-categoria">
-                    <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded">
+                    <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded seleccionable">
                         <h5 class="card-title mt-3">${opcion.nombre}</h5>
                         <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
                     </div>
@@ -273,16 +273,16 @@ function obtenerOpciones(Opciones){
             `;
         }else if(Opciones == ComidaRapida && opcion.nombre == "HAMBURGUESA SIMPLE"){
             optionsContainer.innerHTML += `
-                <a href="../Pedido/pedido.html" class="item-categoria">
-                    <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded">
+                
+                    <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded seleccionable">
                             <h5 class="card-title mt-3">${opcion.nombre}</h5>
                             <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
                     </div>
-                </a>
+               
             `;
         }else{
             optionsContainer.innerHTML += `
-                <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded">
+                <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded seleccionable">
                         <h5 class="card-title mt-3">${opcion.nombre}</h5>
                         <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
                 </div>
@@ -292,6 +292,37 @@ function obtenerOpciones(Opciones){
         
     });
 
+}
+function aplicarEstiloSeleccion() {
+    const seleccionables = document.querySelectorAll(".seleccionable");
+    let seleccionados = 0;
+
+    seleccionables.forEach((element) => {
+        element.addEventListener("click", function () {
+            if (element.classList.contains("seleccionado")) {
+                // Si ya está seleccionado, se deselecciona
+                element.classList.remove("seleccionado");
+                seleccionados--;
+            } else {
+                // Si el límite de 3 no ha sido alcanzado, selecciona
+                if (seleccionados < 3) {
+                    element.classList.add("seleccionado");
+                    seleccionados++;
+                } else {
+                    MostrarMensajeAdvertencia();
+                }
+            }
+        });
+    });
+}
+
+function MostrarMensajeAdvertencia() {
+    const successMessage = document.getElementById('AdvertenciaPedido');
+    successMessage.style.display = 'block';
+    
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+    }, 3000);
 }
 
 function manejarContenido(seccion){
@@ -353,4 +384,6 @@ function manejarContenido(seccion){
             obtenerOpciones(Categorias);
             break;
     }
+    aplicarEstiloSeleccion();
 }
+

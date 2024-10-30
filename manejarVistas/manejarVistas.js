@@ -5,12 +5,12 @@ function redirigirConId() {
     contenido.addEventListener("click", function() {
         window.location.href = "../categorias/categorias.html";
     });
-    hamburguesaEjemplo.addEventListener("click", function() {
-        console.log("click");
-        console.log("hila");
+    // hamburguesaEjemplo.addEventListener("click", function() {
+    //     console.log("click");
+    //     console.log("hila");
     
-        window.location.href = "../Pedido/pedido.html";
-    });
+    //     window.location.href = "../Pedido/pedido.html";
+    // });
     
 }
 window.onload = redirigirConId();
