@@ -28,4 +28,26 @@ body a{
     grid-template-rows: repeat(2, auto); /* 2 filas */
     gap: 1.5rem; /* Espacio entre las tarjetas */
 }
+.seleccionado {
+    border: 2px solid #007bff; /* Color para indicar selección */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.toast.show {
+    opacity: 1;
+}
 

@@ -1,0 +1,9 @@
+{
+  "pedido": {
+    "nombre": "Hamburguesa Simple",
+    "cantidad": 1,
+    "tamaño": "Pequeña",
+    "precio": 0,
+    "consumo": "Para Llevar"
+  }
+}
