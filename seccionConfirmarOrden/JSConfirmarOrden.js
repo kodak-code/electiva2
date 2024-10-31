@@ -9,7 +9,7 @@ function inicio() {
 
     
     
-    
+    cargarOrdenes()
     function obtenerOrden1() {
     let texto1 = '';
     
@@ -38,5 +38,41 @@ function leerOrden1() {
 
 const btnParlanteOrden1 = document.getElementById('btn-parlante1');
 btnParlanteOrden1.addEventListener('click', leerOrden1);
+
+}
+
+function cargarOrdenes(){
+
+    const ordenesContainer = document.getElementById("ordenes-container");
+    ordenesContainer.innerHTML = "";
+
+    const ordenesSeleccionadas = JSON.parse(localStorage.getItem("selecciones")) || [];
+
+    if(ordenesSeleccionadas.length === 0){
+        return
+    }
+
+    ordenesSeleccionadas.forEach((opcion, index) =>{
+        const ordenDiv = document.createElement("div")
+        ordenDiv.classList.add("col-lg-4", "col-sm-6")
+
+        ordenDiv.innerHTML = `
+          <div class="item-orden min-comida">
+                <h4 class="mt-4">ORDEN ${index + 1}</h4>
+                <img src="${opcion.imagen}" alt="Imagen Orden 1" class="img-fluid" id="imagen-orden1">
+                <h5 id="nombre-orden1"></h5>
+                <h5>Cantidad:<span id="cantidad-orden1">${opcion.cantidad}</span></h5>
+                <h5>Tamaño:<span id="tamaño-orden1">${opcion.tamanio == null ? "Pequeña" : opcion.tamanio == "m" ? "Mediano" : "Grande"}</span></h5>
+                <h5>Precio: <span id="precio-orden1">${opcion.cantidad * opcion.precio}</span></h5> 
+            </div>
+            <div class="text-center mt-2">
+                <button type="button" class="boton-icono" id="btn-parlante1"> 
+                    <i class="parlante bi bi-volume-up" style="font-size: 4rem;"></i>
+                </button>
+            </div>
+        `
+        ordenesContainer.appendChild(ordenDiv); 
+    })
+
 
 }

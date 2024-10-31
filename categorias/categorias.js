@@ -287,6 +287,9 @@ function obtenerOpciones(Opciones){
                     <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded seleccionable">
                         <h5 class="card-title mt-3">${opcion.nombre}</h5>
                         <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
+                        <h5 class="card-price mt-3 d-none">${opcion.precio || ''}</h5>
+                        <h5 class="card-quantity mt-3 d-none">${opcion.cantidad || ''}</h5>
+
                     </div>
                 </a>
             `;
@@ -296,6 +299,9 @@ function obtenerOpciones(Opciones){
                     <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded seleccionable">
                             <h5 class="card-title mt-3">${opcion.nombre}</h5>
                             <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
+                            <h5 class="card-price mt-3 d-none">${opcion.precio || ''}</h5>
+                        <h5 class="card-quantity mt-3 d-none">${opcion.cantidad || ''}</h5>
+
                     </div>
                
             `;
@@ -304,6 +310,9 @@ function obtenerOpciones(Opciones){
                 <div class="card d-flex h-100 justify-content-between align-items-center border border-secondary rounded seleccionable">
                         <h5 class="card-title mt-3">${opcion.nombre}</h5>
                         <img src="${opcion.imagen}" class="card-img-top mb-3 w-50" alt="Imagen ${opcion.nombre}">
+                        <h5 class="card-price mt-3 d-none">${opcion.precio || ''}</h5>
+                        <h5 class="card-quantity mt-3 d-none">${opcion.cantidad || ''}</h5>
+
                 </div>
             `;
         }
@@ -312,41 +321,51 @@ function obtenerOpciones(Opciones){
     });
 
 }
+
 function aplicarEstiloSeleccion() {
     const seleccionables = document.querySelectorAll(".seleccionable");
     let seleccionados = JSON.parse(localStorage.getItem("selecciones")) || [];
+    
+    // Filter out any previous selections of "COMIDA RÁPIDA"
     seleccionados = seleccionados.filter(obj => obj.nombre !== "COMIDA RÁPIDA");
-    // Actualizar la interfaz visual con elementos previamente seleccionados
-    seleccionables.forEach((element, index) => {
-        if (seleccionados.some(seleccion => seleccion.nombre === element.querySelector(".card-title").textContent)) {
+    
+    // Update the visual interface with previously selected elements
+    seleccionables.forEach((element) => {
+        const nombre = element.querySelector(".card-title").textContent;
+        const precio = element.querySelector(".card-price").textContent;
+        const cantidad = element.querySelector(".card-quantity").textContent;
+        // Add "seleccionado" class if the item is already selected
+        if (seleccionados.some(seleccion => seleccion.nombre === nombre)) {
             element.classList.add("seleccionado");
         }
-        
-        element.addEventListener("click", function () {
-            const nombre = element.querySelector(".card-title").textContent;
 
+        element.addEventListener("click", function () {
+            
             if (element.classList.contains("seleccionado")) {
-                // Si ya está seleccionado, se deselecciona y se elimina del localStorage
+                // If already selected, deselect and remove from localStorage
                 element.classList.remove("seleccionado");
                 seleccionados = seleccionados.filter(seleccion => seleccion.nombre !== nombre);
             } else {
-                // Si el límite de 3 no ha sido alcanzado, selecciona y guarda en localStorage
+                // Check if the limit of 3 selections has been reached
                 if (seleccionados.length < 3) {
                     element.classList.add("seleccionado");
                     seleccionados.push({
                         nombre: nombre,
+                        precio: precio,
+                        cantidad: cantidad,
                         imagen: element.querySelector(".card-img-top").src
                     });
                 } else {
-                    MostrarMensajeAdvertencia();
+                    MostrarMensajeAdvertencia(); // Function to show a warning message
                 }
             }
 
-            // Guardar en localStorage
+            // Save the updated selections in localStorage
             localStorage.setItem("selecciones", JSON.stringify(seleccionados));
         });
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", function (){
     verificarCategoria();
@@ -431,6 +450,5 @@ function manejarContenido(seccion){
             obtenerOpciones(Categorias);
             break;
     }
-    aplicarEstiloSeleccion();
+     aplicarEstiloSeleccion();
 }
-
