@@ -10,69 +10,130 @@ function inicio() {
     
     
     cargarOrdenes()
-    function obtenerOrden1() {
-    let texto1 = '';
     
-    const nombre_o1TC = nombre_o1.textContent;
-    const cantidad_o1TC = cantidad_o1.textContent; 
-    const tamaño_o1V = tamaño_o1.value;
-    const tamaño_o1TC = document.querySelector(`#select-tamaño option[value="${tamaño_o1V}"]`).textContent;
-    const precio_o1V = precio_o1.value; 
-    
-    texto1 +=  `ORDEN 1: ${nombre_o1TC}. Cantidad: ${cantidad_o1TC}. Tamaño: ${tamaño_o1TC}. Precio: ${precio_o1V}.`; 
-    return texto1;
 }
 
 
-function leerOrden1() {
-    const synth = window.speechSynthesis;
-    const textoOrden1 = obtenerOrden1();
-    if (synth.speaking) {
-        synth.cancel();
-    }
-    if (textoOrden1 !== '') {
-        const utterance = new SpeechSynthesisUtterance(textoOrden1);
-        synth.speak(utterance);
-    }
-}
 
-const btnParlanteOrden1 = document.getElementById('btn-parlante1');
-btnParlanteOrden1.addEventListener('click', leerOrden1);
 
-}
-
-function cargarOrdenes(){
-
+function cargarOrdenes() {
     const ordenesContainer = document.getElementById("ordenes-container");
     ordenesContainer.innerHTML = "";
 
     const ordenesSeleccionadas = JSON.parse(localStorage.getItem("selecciones")) || [];
 
-    if(ordenesSeleccionadas.length === 0){
-        return
+    if (ordenesSeleccionadas.length === 0) {
+        return;
     }
 
-    ordenesSeleccionadas.forEach((opcion, index) =>{
-        const ordenDiv = document.createElement("div")
-        ordenDiv.classList.add("col-lg-4", "col-sm-6")
+    ordenesSeleccionadas.forEach((opcion, index) => {
+        const ordenDiv = document.createElement("div");
+        ordenDiv.classList.add("col-lg-4", "col-sm-6");
 
         ordenDiv.innerHTML = `
-          <div class="item-orden min-comida">
+            <div class="item-orden min-comida">
                 <h4 class="mt-4">ORDEN ${index + 1}</h4>
-                <img src="${opcion.imagen}" alt="Imagen Orden 1" class="img-fluid" id="imagen-orden1">
-                <h5 id="nombre-orden1"></h5>
-                <h5>Cantidad:<span id="cantidad-orden1">${opcion.cantidad}</span></h5>
-                <h5>Tamaño:<span id="tamaño-orden1">${opcion.tamanio == null ? "Pequeña" : opcion.tamanio == "m" ? "Mediano" : "Grande"}</span></h5>
-                <h5>Precio: <span id="precio-orden1">${opcion.cantidad * opcion.precio}</span></h5> 
+                <img src="${opcion.imagen}" alt="Imagen Orden ${index + 1}" class="img-fluid">
+                <h5 id="nombre-orden${index}">${opcion.nombre}</h5>
+                <h5>Cantidad: <span id="cantidad-orden${index}">${opcion.cantidad}</span></h5>
+                <h5>Tamaño: <span id="tamaño-orden${index}">${opcion.tamanio == null ? "Pequeña" : opcion.tamanio == "m" ? "Mediano" : "Grande"}</span></h5>
+                <h5>Precio: <span id="precio-orden${index}">${opcion.cantidad * opcion.precio}</span></h5>
             </div>
             <div class="text-center mt-2">
-                <button type="button" class="boton-icono" id="btn-parlante1"> 
+                <button type="button" class="boton-icono" id="btn-parlante${index}"> 
                     <i class="parlante bi bi-volume-up" style="font-size: 4rem;"></i>
                 </button>
             </div>
-        `
-        ordenesContainer.appendChild(ordenDiv); 
-    })
+        `;
+        ordenesContainer.appendChild(ordenDiv);
 
-
+        const btnParlante = document.getElementById(`btn-parlante${index}`);
+        btnParlante.addEventListener('click', () => leerOrden(index));
+    });
 }
+
+function leerOrden(index) {
+    const nombreOrden = document.getElementById(`nombre-orden${index}`).textContent;
+    const cantidadOrden = document.getElementById(`cantidad-orden${index}`).textContent;
+    const tamañoOrden = document.getElementById(`tamaño-orden${index}`).textContent;
+    const precioOrden = document.getElementById(`precio-orden${index}`).textContent;
+
+    const synth = window.speechSynthesis;
+    const textoOrden = `ORDEN ${index + 1}: ${nombreOrden}. Cantidad: ${cantidadOrden}. Tamaño: ${tamañoOrden}. Precio: ${precioOrden}. pesos.`;
+
+    if (synth.speaking) {
+        synth.cancel();
+    }
+    if (textoOrden !== '') {
+        const utterance = new SpeechSynthesisUtterance(textoOrden);
+        synth.speak(utterance);
+    }
+}
+
+function leerTodo() {
+    const synth = window.speechSynthesis;
+    const ordenesSeleccionadas = JSON.parse(localStorage.getItem("selecciones")) || [];
+    let index = 0;
+
+    function hablar() {
+        if (index < ordenesSeleccionadas.length) {
+            const nombreOrden = document.getElementById(`nombre-orden${index}`).textContent;
+            const cantidadOrden = document.getElementById(`cantidad-orden${index}`).textContent;
+            const tamañoOrden = document.getElementById(`tamaño-orden${index}`).textContent;
+            const precioOrden = document.getElementById(`precio-orden${index}`).textContent;
+            const textoOrden = `ORDEN ${index + 1}: ${nombreOrden}. Cantidad: ${cantidadOrden}. Tamaño: ${tamañoOrden}. Precio: ${precioOrden} pesos.`;
+
+            const utterance = new SpeechSynthesisUtterance(textoOrden);
+            utterance.onend = () => {
+                index++;
+                hablar();
+            };
+            synth.speak(utterance);
+        }
+    }
+
+    hablar();
+}
+
+const btnEscucharTodas = document.getElementById("btn-orden");
+btnEscucharTodas.addEventListener("click", leerTodo);
+
+
+
+const btnVolverOrdenar = document.getElementById("volver-orden");
+btnVolverOrdenar.addEventListener("click", function() {
+    window.location.href = "../index.html";
+});
+
+
+const btnPO = document.getElementById("btn-parlante-orden");
+const btnPV = document.getElementById("btn-parlante-volver");
+const synth = window.speechSynthesis; 
+
+btnPO.addEventListener("click", function() {
+    const btnEscucharTodas = document.getElementById("btn-orden");
+    const textoBtn = btnEscucharTodas.textContent;
+
+    if (synth.speaking) {
+        synth.cancel(); 
+    }
+
+    if (textoBtn !== '') {
+        const utterance = new SpeechSynthesisUtterance(textoBtn); 
+        synth.speak(utterance); 
+    }
+});
+
+btnPV.addEventListener("click", function() {
+    const btnVolverOrdenar = document.getElementById("volver-orden");
+    const textoBtn = btnVolverOrdenar.textContent;
+
+    if (synth.speaking) {
+        synth.cancel(); 
+    }
+
+    if (textoBtn !== '') {
+        const utterance = new SpeechSynthesisUtterance(textoBtn); 
+        synth.speak(utterance); 
+    }
+});
