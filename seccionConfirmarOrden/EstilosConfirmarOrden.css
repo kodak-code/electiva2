@@ -1,9 +1,11 @@
 
 .btn-custom {
-    height: 100px;
-    width: 150px;
-    min-width: 50px;
-    min-height: 50px;
+    border-radius: 20px !important;
+    font-size: 1.2em !important;
+    min-width: 120px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+
 }
 .item-orden {
     border: 2px solid var(--color-bordes) !important;
