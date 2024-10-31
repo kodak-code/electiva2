@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     botonSiguiente.addEventListener('click', function(event) {
         event.preventDefault(); // Evitar la redirección inmediata
         guardarPedido(); // Guardar el pedido en localStorage
-        window.location.href = "/seccionConfirmarPedido/InterfazConfirmarPedido.html"; // Redirigir manualmente
+        window.location.href = "../seccionConfirmarOrden/InterfazConfirmarOrden.html"; // Redirigir manualmente
     });
 });
