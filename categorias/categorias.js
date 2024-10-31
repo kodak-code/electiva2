@@ -41,34 +41,53 @@ const ComidaRapida = [
     {
         id: 1,
         nombre: "HAMBURGUESA SIMPLE",
-        imagen: "./imgs-opciones/hamburguesa-simple.png"
+        imagen: "./imgs-opciones/hamburguesa-simple.png",
+        precio: 500,
+        tamanio: "mediana",
+        cantidad: 1
     },
     {
         id: 2,
         nombre: "HAMBURGUESA COMPLETA",
-        imagen: "./imgs-opciones/hamburguesa-completa.png"
+        imagen: "./imgs-opciones/hamburguesa-completa.png",
+        precio: 700,
+        tamanio: "grande",
+        cantidad: 1
     },
     {
         id: 3,
         nombre: "PAPAS FRITAS",
-        imagen: "./imgs-opciones/porcion-papas.png"
+        imagen: "./imgs-opciones/porcion-papas.png",
+        precio: 300,
+        tamanio: "pequeña",
+        cantidad: 1
     },
     {
         id: 4,
         nombre: "CONO HELADO",
-        imagen: "./imgs-opciones/cono-helado.png"
+        imagen: "./imgs-opciones/cono-helado.png",
+        precio: 200,
+        tamanio: "único",
+        cantidad: 1
     },
     {
         id: 5,
         nombre: "ENSALADA",
-        imagen: "./imgs-opciones/ensalada-completa.png"
+        imagen: "./imgs-opciones/ensalada-completa.png",
+        precio: 450,
+        tamanio: "grande",
+        cantidad: 1
     },
     {
         id: 6,
         nombre: "NUGGETS",
-        imagen: "./imgs-opciones/porcion-nuggets.png"
+        imagen: "./imgs-opciones/porcion-nuggets.png",
+        precio: 350,
+        tamanio: "mediana",
+        cantidad: 1
     }
 ];
+
 
 const Entradas = [
     {
@@ -295,26 +314,54 @@ function obtenerOpciones(Opciones){
 }
 function aplicarEstiloSeleccion() {
     const seleccionables = document.querySelectorAll(".seleccionable");
-    let seleccionados = 0;
-
-    seleccionables.forEach((element) => {
+    let seleccionados = JSON.parse(localStorage.getItem("selecciones")) || [];
+    seleccionados = seleccionados.filter(obj => obj.nombre !== "COMIDA RÁPIDA");
+    // Actualizar la interfaz visual con elementos previamente seleccionados
+    seleccionables.forEach((element, index) => {
+        if (seleccionados.some(seleccion => seleccion.nombre === element.querySelector(".card-title").textContent)) {
+            element.classList.add("seleccionado");
+        }
+        
         element.addEventListener("click", function () {
+            const nombre = element.querySelector(".card-title").textContent;
+
             if (element.classList.contains("seleccionado")) {
-                // Si ya está seleccionado, se deselecciona
+                // Si ya está seleccionado, se deselecciona y se elimina del localStorage
                 element.classList.remove("seleccionado");
-                seleccionados--;
+                seleccionados = seleccionados.filter(seleccion => seleccion.nombre !== nombre);
             } else {
-                // Si el límite de 3 no ha sido alcanzado, selecciona
-                if (seleccionados < 3) {
+                // Si el límite de 3 no ha sido alcanzado, selecciona y guarda en localStorage
+                if (seleccionados.length < 3) {
                     element.classList.add("seleccionado");
-                    seleccionados++;
+                    seleccionados.push({
+                        nombre: nombre,
+                        imagen: element.querySelector(".card-img-top").src
+                    });
                 } else {
                     MostrarMensajeAdvertencia();
                 }
             }
+
+            // Guardar en localStorage
+            localStorage.setItem("selecciones", JSON.stringify(seleccionados));
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", function (){
+    verificarCategoria();
+
+    // Recuperar las selecciones guardadas al cargar la página
+    const seleccionadosGuardados = JSON.parse(localStorage.getItem("selecciones"));
+    if (seleccionadosGuardados) {
+        aplicarEstiloSeleccion();
+    }
+
+    window.addEventListener('hashchange', function () {
+        manejarContenido(location.hash);
+    });
+});
+
 
 function MostrarMensajeAdvertencia() {
     const successMessage = document.getElementById('AdvertenciaPedido');

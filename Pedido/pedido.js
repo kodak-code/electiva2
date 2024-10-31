@@ -1,107 +1,107 @@
-window.onload = inicio();
+// window.onload = inicio();
 
-function inicio() {
-    let cantidad = 1;
-    const cantidadElemento = document.getElementById('cantidad-texto');
-    const btnIncrementar = document.getElementById('mas');
-    const btnDecrementar = document.getElementById('menos');
-    const selectTamaño = document.getElementById('select-tamaño');
-    const precioInput = document.getElementById("precio");
-    const nombre = document.getElementById("nombre");
-    const img = document.getElementById("imagen");
-    const boton = document.getElementById("boton-seguir");
+// function inicio() {
+//     let cantidad = 1;
+//     const cantidadElemento = document.getElementById('cantidad-texto');
+//     const btnIncrementar = document.getElementById('mas');
+//     const btnDecrementar = document.getElementById('menos');
+//     const selectTamaño = document.getElementById('select-tamaño');
+//     const precioInput = document.getElementById("precio");
+//     const nombre = document.getElementById("nombre");
+//     const img = document.getElementById("imagen");
+//     const boton = document.getElementById("boton-seguir");
     
-    function simularCarga() {
-        let hamburguesa = '{ "nombre" : "Hamburguesa Simple" , "img_src" : "../categorias/imgs-opciones/hamburguesa-simple.png"}';
-        const obj = JSON.parse(hamburguesa);
-        nombre.textContent = obj.nombre;
-        img.src = obj.img_src;
-    }
+//     function simularCarga() {
+//         let hamburguesa = '{ "nombre" : "Hamburguesa Simple" , "img_src" : "../categorias/imgs-opciones/hamburguesa-simple.png"}';
+//         const obj = JSON.parse(hamburguesa);
+//         nombre.textContent = obj.nombre;
+//         img.src = obj.img_src;
+//     }
 
-    simularCarga();
+//     simularCarga();
 
 
-    function guardarPedido() {
-        let pedido = {
-            "cantidad": cantidadElemento.textContent,
-            "tamaño": selectTamaño.options[selectTamaño.selectedIndex].text,
-            "nombre": nombre.textContent,
-            "imagen": img.src,
-            "precio": precioInput.value
-        };
+//     function guardarPedido() {
+//         let pedido = {
+//             "cantidad": cantidadElemento.textContent,
+//             "tamaño": selectTamaño.options[selectTamaño.selectedIndex].text,
+//             "nombre": nombre.textContent,
+//             "imagen": img.src,
+//             "precio": precioInput.value
+//         };
 
-        localStorage.setItem("pedido", JSON.stringify(pedido));
-        console.log("Pedido guardado:", pedido);
-    }
+//         localStorage.setItem("pedido", JSON.stringify(pedido));
+//         console.log("Pedido guardado:", pedido);
+//     }
 
-    boton.addEventListener("click", guardarPedido);
+//     boton.addEventListener("click", guardarPedido);
 
-    const actualizarPrecio = () => {
-        let precio; 
-        switch (selectTamaño.value) {
-            case 'p':
-                precio = 100;
-                break;
-            case 'm':
-                precio = 150;
-                break;
-            case 'g':
-                precio = 200;
-                break;
-            default:
-                precio = 0; 
-        }
-        let precioMultiplicado = cantidad * precio;
-        precioInput.value = precioMultiplicado;
-    };
+//     const actualizarPrecio = () => {
+//         let precio; 
+//         switch (selectTamaño.value) {
+//             case 'p':
+//                 precio = 100;
+//                 break;
+//             case 'm':
+//                 precio = 150;
+//                 break;
+//             case 'g':
+//                 precio = 200;
+//                 break;
+//             default:
+//                 precio = 0; 
+//         }
+//         let precioMultiplicado = cantidad * precio;
+//         precioInput.value = precioMultiplicado;
+//     };
 
-    btnIncrementar.addEventListener('click', () => {
-        if (cantidad < 10) {
-            cantidad++;
-            cantidadElemento.textContent = cantidad;
-            actualizarPrecio();
-        }
-    });
+//     btnIncrementar.addEventListener('click', () => {
+//         if (cantidad < 10) {
+//             cantidad++;
+//             cantidadElemento.textContent = cantidad;
+//             actualizarPrecio();
+//         }
+//     });
 
-    btnDecrementar.addEventListener('click', () => {
-        if (cantidad > 1) {
-            cantidad--;
-            cantidadElemento.textContent = cantidad;
-            actualizarPrecio();
-        }
-    });
+//     btnDecrementar.addEventListener('click', () => {
+//         if (cantidad > 1) {
+//             cantidad--;
+//             cantidadElemento.textContent = cantidad;
+//             actualizarPrecio();
+//         }
+//     });
 
-    selectTamaño.addEventListener('change', () => {
-        actualizarPrecio();
-    });
+//     selectTamaño.addEventListener('change', () => {
+//         actualizarPrecio();
+//     });
 
-    actualizarPrecio();
+//     actualizarPrecio();
 
-    function leerContenido() {
-        const synth = window.speechSynthesis;
-        const texto = obtenerTextoDeLaPagina();
-        if (synth.speaking) {
-            synth.cancel();
-        }
-        if (texto !== '') {
-            const utterance = new SpeechSynthesisUtterance(texto);
-            synth.speak(utterance);
-        }
-    }
+//     function leerContenido() {
+//         const synth = window.speechSynthesis;
+//         const texto = obtenerTextoDeLaPagina();
+//         if (synth.speaking) {
+//             synth.cancel();
+//         }
+//         if (texto !== '') {
+//             const utterance = new SpeechSynthesisUtterance(texto);
+//             synth.speak(utterance);
+//         }
+//     }
 
-    function obtenerTextoDeLaPagina() {
-        let texto = '';
+//     function obtenerTextoDeLaPagina() {
+//         let texto = '';
 
-        const nombreTC = nombre.textContent;
-        const cantidadTC = cantidadElemento.textContent; 
-        const tamañoV = selectTamaño.value;
-        const tamañoTC = document.querySelector(`#select-tamaño option[value="${tamañoV}"]`).textContent;
-        const precioV = document.getElementById('precio').value; 
+//         const nombreTC = nombre.textContent;
+//         const cantidadTC = cantidadElemento.textContent; 
+//         const tamañoV = selectTamaño.value;
+//         const tamañoTC = document.querySelector(`#select-tamaño option[value="${tamañoV}"]`).textContent;
+//         const precioV = document.getElementById('precio').value; 
 
-        texto += `${nombreTC}. Cantidad: ${cantidadTC}. Tamaño: ${tamañoTC}. Precio: ${precioV}.`; 
-        return texto;
-    }
+//         texto += `${nombreTC}. Cantidad: ${cantidadTC}. Tamaño: ${tamañoTC}. Precio: ${precioV}.`; 
+//         return texto;
+//     }
 
-    const btnParlante = document.getElementById('btn-parlante');
-    btnParlante.addEventListener('click', leerContenido);
-}
+//     const btnParlante = document.getElementById('btn-parlante');
+//     btnParlante.addEventListener('click', leerContenido);
+// }
