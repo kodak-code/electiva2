@@ -92,13 +92,13 @@ function inicio() {
     function obtenerTextoDeLaPagina() {
         let texto = '';
 
-        const titulo = document.querySelector('h3').textContent;
-        const cantidad = document.getElementById('cantidad-texto').textContent; 
-        const tamañoSeleccionado = document.getElementById('select-tamaño').value;
-        const tamañoTexto = document.querySelector(`#select-tamaño option[value="${tamañoSeleccionado}"]`).textContent;
-        const precio = document.getElementById('precio').value; 
+        const nombreTC = nombre.textContent;
+        const cantidadTC = cantidadElemento.textContent; 
+        const tamañoV = selectTamaño.value;
+        const tamañoTC = document.querySelector(`#select-tamaño option[value="${tamañoV}"]`).textContent;
+        const precioV = document.getElementById('precio').value; 
 
-        texto += `${titulo}. Cantidad: ${cantidad}. Tamaño: ${tamañoTexto}. Precio: ${precio}.`; 
+        texto += `${nombreTC}. Cantidad: ${cantidadTC}. Tamaño: ${tamañoTC}. Precio: ${precioV}.`; 
         return texto;
     }
 

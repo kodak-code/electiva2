@@ -6,7 +6,7 @@
     min-height: 50px;
 }
 .item-orden {
-    border: 3px solid rgb(0, 0, 0);
+    border: 2px solid var(--color-bordes) !important;
     border-radius: 15px;
     text-align: center;
     min-width: 120px;
